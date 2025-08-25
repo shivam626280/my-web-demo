@@ -214,7 +214,3 @@ def withdraw():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
-<<<<<<< HEAD
-
-=======
->>>>>>> faa6ceea0f6e4772b136acf614eedf4a721d993c
