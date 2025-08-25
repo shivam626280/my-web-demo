@@ -1,8 +1,0 @@
-body { background: #178B8D; color: #fff; font-family: sans-serif; margin:0; }
-header { display: flex; justify-content: space-between; align-items:center; padding: 16px; }
-.avatar { width: 34px; height: 34px; border-radius:50%; background:#fff; display:inline-block; vertical-align:middle; }
-.coins { font-size: 1.2em; }
-.spin-btn { background: #fff; color: #178B8D; border-radius: 22px; padding: 13px 35px; font-size: 1.08em; cursor: pointer; margin: 18px auto; display:block;}
-.reward { font-size:1.4em;padding:10px 0;text-align:center;}
-button { background:#045d5d;color:#fff;border:none;padding:13px 18px;border-radius:8px;font-size:1em;}
-#result { font-size:1.2em; margin-top:16px; text-align:center;}
