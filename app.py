@@ -16,8 +16,8 @@ TEMPLATE = '''
             background: #fff;
             border-radius: 24px;
             box-shadow: 0 4px 24px #0001;
-            padding-bottom: 80px; /* make page scrollable */
-            min-height: 110vh;   /* for scroll event to work */
+            padding-bottom: 80px;
+            min-height: 110vh;
         }
         .card-top {
             background: #fe73a3;
@@ -47,23 +47,6 @@ TEMPLATE = '''
             justify-content: center;
             cursor: pointer;
             transition: background 0.2s, opacity 0.6s;
-        }
-        .hidden-btn {
-            opacity: 0;
-            pointer-events: none;
-            height: 0;
-            overflow: hidden;
-            margin-top: 0;
-            margin-bottom: 0;
-            padding-top: 0;
-            padding-bottom: 0;
-        }
-        .join-btn.visible {
-            opacity: 1;
-            pointer-events: auto;
-            height: auto;
-            margin: 8px auto;
-            padding: 13px 0;
         }
         .join-btn:disabled { background: #a2d1bc; color: #fff; cursor: not-allowed;}
         .lock-btn, .claim-btn {
@@ -137,8 +120,8 @@ TEMPLATE = '''
         <button class="join-btn" onclick="joinChannel(0)" id="btn0">🟢 JOIN CHANNEL</button>
         <button class="join-btn" onclick="joinChannel(1)" id="btn1">🟢 JOIN CHANNEL</button>
         <button class="join-btn" onclick="joinChannel(2)" id="btn2">🟢 JOIN CHANNEL</button>
-        <button class="join-btn hidden-btn" onclick="joinChannel(3)" id="btn3">🟢 JOIN CHANNEL</button>
-        <button class="join-btn hidden-btn" onclick="joinChannel(4)" id="btn4">🟢 JOIN CHANNEL</button>
+        <button class="join-btn" onclick="joinChannel(3)" id="btn3">🟢 JOIN CHANNEL</button>
+        <button class="join-btn" onclick="joinChannel(4)" id="btn4">🟢 JOIN CHANNEL</button>
     </div>
     <button class="lock-btn" id="lock-btn" disabled>🔒 Join all channels first (0/5)</button>
     <button class="claim-btn" id="claim-btn" onclick="showWithdraw()" disabled>🎁 Claim ₹300 UPI Reward</button>
@@ -187,16 +170,6 @@ TEMPLATE = '''
     function submitWithdraw() {
         document.getElementById("status").innerHTML = '<div class="success-msg">redeem successfully payment received shortly</div>';
     }
-
-    window.addEventListener('scroll', function() {
-        var docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        if (window.scrollY > docHeight - 100 || window.scrollY > 200) {
-            document.getElementById("btn3").classList.remove("hidden-btn");
-            document.getElementById("btn3").classList.add("visible");
-            document.getElementById("btn4").classList.remove("hidden-btn");
-            document.getElementById("btn4").classList.add("visible");
-        }
-    });
 </script>
 </body>
 </html>
@@ -214,3 +187,4 @@ def withdraw():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
+    
